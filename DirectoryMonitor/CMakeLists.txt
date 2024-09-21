@@ -12,7 +12,7 @@ endif()
 project ("DirectoryMonitor")
 
 # Add source to this project's executable.
-add_executable (DirectoryMonitor "DirectoryMonitor.cpp" "DirectoryMonitor.h")
+add_executable (DirectoryMonitor "DirectoryMonitorMain.cpp" "DirectoryMonitorMain.h" "DirectoryMonitor.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET DirectoryMonitor PROPERTY CXX_STANDARD 20)

@@ -1,7 +1,7 @@
 ﻿// DirectoryMonitor.cpp : Defines the entry point for the application.
 //
 
-#include "DirectoryMonitor.h"
+#include "DirectoryMonitorMain.h"
 
 void RefreshDirectory(LPTSTR);
 void RefreshTree(LPTSTR);
@@ -17,6 +17,20 @@ void _tmain(int argc, TCHAR *argv[])
 
     WatchDirectory(argv[1]);
 }
+
+/*
+void DesiredInterface()
+{
+    auto watcher = DirectoryWatcher{};
+
+    watcher.subscribe(L"C:\TestDirectory", [](const auto& watchedDirectory) {
+        std::wcout << L"Something changed in" << watchedDirectory << L"\n";
+    });
+
+    watcher.run();
+}
+*/
+
 
 void WatchDirectory(LPTSTR lpDir)
 {

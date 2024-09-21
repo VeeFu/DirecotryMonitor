@@ -1,3 +1,5 @@
 # ninja log v5
 3	953	7486357588684168	CMakeFiles/DirectoryMonitor.dir/DirectoryMonitor.cpp.obj	9c21f76f4745e44b
 954	1197	7486357590971750	DirectoryMonitor.exe	94f6f33d2da85637
+3	1318	7486411666388825	CMakeFiles/DirectoryMonitor.dir/DirectoryMonitorMain.cpp.obj	b0c36135aba6bdc8
+1319	1487	7486411667640693	DirectoryMonitor.exe	41e8fc26e379de24

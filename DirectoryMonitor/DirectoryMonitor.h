@@ -1,12 +1,17 @@
-﻿// DirectoryMonitor.h : Include file for standard system include files,
-// or project specific include files.
+#include <functional>
+#include <filesystem>
 
-#pragma once
+namespace DirectoryMonitor {
 
-#include <iostream>
-#include <windows.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <tchar.h>
+    enum class Error {
+        none,
+        unknown
+    };
 
-// TODO: Reference additional headers your program requires here.
+    using callback = std::function<void(const std::filesystem::path&)>;
+
+    struct IDirectoryWatcher {
+        virtual Error subscribe(const std::filesystem::path& dir, const callback& cb) = 0;
+        virtual void run() = 0;
+    };
+}
