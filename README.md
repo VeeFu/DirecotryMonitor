@@ -9,9 +9,9 @@ Design & implement a notifier to monitor a specified directory path. Some consum
     [X] Build Working prototype in constole application for Win32
         FindFirstChangNotification and WaitForMultipleObjects seem to be the relevant functions for Win32
     [X] Research and Notes
-    [ ] Design platform-agnositc interface
+    [X] Design platform-agnositc interface
         Since cross-platform was mentioned in intoductory interview, this seems like a relevant iteration
-    [ ] Refactor prototype to use new interface
+    [X] Refactor prototype to use new interface
 
 
 ## Research Notes
