@@ -15,14 +15,15 @@ namespace DirectoryMonitor {
         SimpleDirectoryMonitorImpl();
         virtual ~SimpleDirectoryMonitorImpl();
 
-        Error subscribe(const std::filesystem::path& dir, const callback& cb);
+        Error subscribe(const std::filesystem::path& dir, const SimpleCallback& cb);
         void run();
 
     private:
 
         DWORD dwWaitStatus; 
-        HANDLE dwChangeHandles[2]; 
-        TCHAR lpDrive[4];
+        std::vector<HANDLE>                 dwChangeHandles;
+        std::vector<SimpleCallback>         callbacks;
+        std::vector<std::filesystem::path>  paths;
         TCHAR lpFile[_MAX_FNAME];
         TCHAR lpExt[_MAX_EXT];
 

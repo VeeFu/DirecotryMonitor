@@ -21,7 +21,7 @@ void _tmain(int argc, TCHAR *argv[])
 /*
 void DesiredInterface()
 {
-    auto watcher = DirectoryWatcher{};
+    IDirectoryWatcher& watcher = SimpleDirectoryWatcher{};
 
     watcher.subscribe(L"C:\TestDirectory", [](const auto& watchedDirectory) {
         std::wcout << L"Something changed in" << watchedDirectory << L"\n";

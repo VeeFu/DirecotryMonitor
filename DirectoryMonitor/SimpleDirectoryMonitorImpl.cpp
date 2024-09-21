@@ -10,7 +10,7 @@ namespace DirectoryMonitor {
 
     }
 
-    Error SimpleDirectoryMonitorImpl::subscribe(const std::filesystem::path& dir, const callback& cb) {
+    Error SimpleDirectoryMonitorImpl::subscribe(const std::filesystem::path& dir, const SimpleCallback& cb) {
 
         const auto hdl = FindFirstChangeNotificationW( 
             dir.native().c_str(),          // directory to watch 
@@ -23,6 +23,8 @@ namespace DirectoryMonitor {
             return Error::unknown;
         }
         else {
+            paths.push_back(dir);
+            callbacks.push_back(cb);
             dwChangeHandles.push_back(hdl);
         }
 
